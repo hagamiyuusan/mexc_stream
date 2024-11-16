@@ -29,7 +29,7 @@ export default function Page() {
   const [balances, setBalances] = useState<Balance[]>([]);
 
   useEffect(() => {
-    const wsUrl = "ws://backend:8000";
+    const wsUrl = "ws://145.223.21.25:8001";
     console.log("Attempting to connect to:", wsUrl);
     const ws = new WebSocket(`${wsUrl}`);
     ws.onopen = () => {
