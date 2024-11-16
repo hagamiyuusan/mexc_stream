@@ -30,8 +30,11 @@ export default function Page() {
 
   useEffect(() => {
     const wsUrl = "ws://backend:8000";
-    console.log(wsUrl);
+    console.log("Attempting to connect to:", wsUrl);
     const ws = new WebSocket(`${wsUrl}`);
+    ws.onopen = () => {
+      console.log("WebSocket Connected successfully");
+    };
     ws.onmessage = (event) => {
       console.log(event.data);
       const data = JSON.parse(event.data);
