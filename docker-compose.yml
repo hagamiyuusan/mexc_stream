@@ -3,8 +3,8 @@ version: "3.8"
 services:
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile.backend
+      context: ./backend
+      dockerfile: Dockerfile
     environment:
       - API_KEY=${API_KEY}
       - API_SECRET=${API_SECRET}
@@ -16,7 +16,7 @@ services:
   frontend:
     build:
       context: ./next-shadcn-admin-dashboard
-      dockerfile: Dockerfile.frontend
+      dockerfile: Dockerfile
     ports:
       - "3001:3000"
     depends_on:
