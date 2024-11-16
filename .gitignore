@@ -1,0 +1,37 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+next-shadcn-admin-dashboard/node_modules
+next-shadcn-admin-dashboard/.pnp
+next-shadcn-admin-dashboard/.pnp.js
+next-shadcn-admin-dashboard/.yarn/install-state.gz
+
+# testing
+next-shadcn-admin-dashboard/coverage
+
+# next.js
+next-shadcn-admin-dashboard/.next/
+next-shadcn-admin-dashboard/out/
+
+# production
+next-shadcn-admin-dashboard/build
+
+# misc
+.DS_Store
+next-shadcn-admin-dashboard/*.pem
+next-shadcn-admin-dashboard/    *.sh
+
+# debug
+next-shadcn-admin-dashboard/npm-debug.log*
+next-shadcn-admin-dashboard/yarn-debug.log*
+next-shadcn-admin-dashboard/yarn-error.log*
+
+# local env files
+next-shadcn-admin-dashboard/.env*.local
+
+# vercel
+next-shadcn-admin-dashboard/.vercel
+
+# typescript
+next-shadcn-admin-dashboard/*.tsbuildinfo
+next-shadcn-admin-dashboard/next-env.d.ts
