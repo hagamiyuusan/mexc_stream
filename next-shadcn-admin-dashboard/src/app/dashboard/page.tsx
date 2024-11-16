@@ -29,7 +29,7 @@ export default function Page() {
   const [balances, setBalances] = useState<Balance[]>([]);
 
   useEffect(() => {
-    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000";
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://backend:8000";
     console.log(wsUrl);
     const ws = new WebSocket(`${wsUrl}/ws`);
     ws.onmessage = (event) => {
