@@ -7,6 +7,10 @@ import hashlib
 import requests
 from websocket_server import WebsocketServer
 import logging
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class MexcWebsocketClient:
     def __init__(self, api_key, secret_key, server_host='localhost', server_port=8000):
@@ -111,7 +115,8 @@ class MexcWebsocketClient:
                     result.append({
                         'asset': asset,
                         'free': float(balance['free']) * price,
-                        'locked': float(balance['locked']) * price
+                        'locked': float(balance['locked']) * price,
+                        'price': price
                     })
             self.balances = result
             self.broadcast_balances(result)
@@ -222,8 +227,8 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     
     client = MexcWebsocketClient(
-        api_key="YourApiKey",
-        secret_key="YourSecretKey"
+        api_key=os.getenv("API_KEY"),
+        secret_key=os.getenv("API_SECRET")
     )
     try:
         client.connect()
