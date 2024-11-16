@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class MexcWebsocketClient:
-    def __init__(self, api_key, secret_key, server_host='localhost', server_port=8000):
+    def __init__(self, api_key, secret_key, server_host='0.0.0.0', server_port=8000):
         self.api_key = api_key
         self.secret_key = secret_key
         self.listen_key = None
