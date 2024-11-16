@@ -9,7 +9,7 @@ services:
       - API_KEY=${API_KEY}
       - API_SECRET=${API_SECRET}
     ports:
-      - "8001:8000"
+      - "8002:8000"
     volumes:
       - ../.env:/app/.env
     networks:
