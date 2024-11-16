@@ -31,7 +31,7 @@ export default function Page() {
   useEffect(() => {
     const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000";
     console.log(wsUrl);
-    const ws = new WebSocket(wsUrl);
+    const ws = new WebSocket(`${wsUrl}/ws`);
     ws.onmessage = (event) => {
       console.log(event.data);
       const data = JSON.parse(event.data);
