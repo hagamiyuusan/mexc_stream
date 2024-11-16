@@ -9,7 +9,7 @@ services:
       - API_KEY=${API_KEY}
       - API_SECRET=${API_SECRET}
     volumes:
-      - ./.env:/app/.env
+      - ../.env:/app/.env
     networks:
       - app-network
 
